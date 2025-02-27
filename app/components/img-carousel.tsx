@@ -29,12 +29,12 @@ export default function ImgSelider() {
     "/images/reveu.png",
     "/images/reveu.png",
     "/images/reveu2.png",
-    "/images/reveu1.png",
-    "/images/reveu.png",
-    "/images/reveu2.png",
-    "/images/reveu1.png",
-    "/images/reveu2.png",
-    "/images/reveu.png",
+    // "/images/reveu1.png",
+    // "/images/reveu.png",
+    // "/images/reveu2.png",
+    // "/images/reveu1.png",
+    // "/images/reveu2.png",
+    // "/images/reveu.png",
   ];
   return (
     <>
@@ -42,14 +42,17 @@ export default function ImgSelider() {
         <div className="main">
           <Swiper
             loop={true}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerGroup={1}
             spaceBetween={0}
-            slidesPerView={3}
+            slidesPerView={4}
             // loopFillGroupWithBlank={true}
             pagination={{
               clickable: false,
             }}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
-            // navigation={true}
+            // navigation={false}
             allowTouchMove={false}
             modules={[EffectCoverflow, Autoplay]}
             className="mySwiper"
@@ -58,7 +61,7 @@ export default function ImgSelider() {
               rotate: 0,
               stretch: 0,
               depth: 110,
-              modifier: 3,
+              modifier: 1,
               slideShadows: true,
             }}
             // breakpoints={{
@@ -76,6 +79,7 @@ export default function ImgSelider() {
             //   },
             // }}
           >
+            <div className="sk">
             {images.map((src, index) => (
               <SwiperSlide key={index} className="swiper-slide">
                 <div>
@@ -91,72 +95,9 @@ export default function ImgSelider() {
                 </div>
               </SwiperSlide>
             ))}
+            </div>
 
-            {/* <SwiperSlide className=" ">
-              <div>
-                <div className="testimonials-profile-circle">
-                  <Image
-                    src={"/images/reveu.png"}
-                    width={70}
-                    height={70}
-                    alt="testimonial-avatar"
-                    className="testimonial-avatar"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <div>
-                <div className="testimonials-profile-circle">
-                  <Image
-                    src={"/images/reveu.png"}
-                    width={70}
-                    height={70}
-                    alt="testimonial-avatar"
-                    className="testimonial-avatar"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <div>
-                <div className="testimonials-profile-circle">
-                  <Image
-                    src={"/images/reveu.png"}
-                    width={70}
-                    height={70}
-                    alt="testimonial-avatar"
-                    className="testimonial-avatar"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <div>
-                <div className="testimonials-profile-circle">
-                  <Image
-                    src={"/images/reveu.png"}
-                    width={70}
-                    height={70}
-                    alt="testimonial-avatar"
-                    className="testimonial-avatar"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <div>
-                <div className="testimonials-profile-circle">
-                  <Image
-                    src={"/images/reveu.png"}
-                    width={70}
-                    height={70}
-                    alt="testimonial-avatar"
-                    className="testimonial-avatar"
-                  />
-                </div>
-              </div>
-            </SwiperSlide> */}
+          
           </Swiper>
         </div>
       </section>
